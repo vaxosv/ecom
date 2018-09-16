@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  bool = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  funing () {
+    this.bool = !this.bool;
+    console.log('weeeeee');
   }
 
 }

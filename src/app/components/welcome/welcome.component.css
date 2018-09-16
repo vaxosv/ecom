@@ -1,0 +1,29 @@
+div{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.fun{
+    animation: aa infinite 500ms;
+    color: chartreuse;
+}
+
+@keyframes aa {
+    0%{
+        color: chartreuse;
+    }
+
+    50%{
+        padding-top: 100px;
+        color: blueviolet;
+    }
+}
