@@ -12,7 +12,7 @@ h1 {
 .row {
     background-size: cover;
   width: 420px;
-  height: 450px;
+  /* height: 450px; */
   padding: 10px;
   margin: auto;
   border-top: 7px solid #e42148;
@@ -44,7 +44,16 @@ input[type="password"] {
   color: #fff;
   font-family: 'Dosis', sans-serif;
 }
-
+button{
+  margin: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  color: rgb(58, 58, 58);
+}
+.gmail{
+  display: flex;
+  justify-content: center;
+}
 input[type="submit"] {
   font-size: 1em;
   background-color: #e42148;
@@ -55,6 +64,7 @@ input[type="submit"] {
   border: none;
   /*cursor: pointer;*/
   margin: 3em 0;
+  margin-bottom: 10px;
   -webkit-transition: 0.5s all;
   -ms-transition: 0.5s all;
   transition: 0.5s all;
