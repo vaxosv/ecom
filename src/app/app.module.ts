@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { FirebaseLService } from './services/firebase-l.service';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { FirebaseLService } from './services/firebase-l.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [FirebaseLService],
   bootstrap: [AppComponent]

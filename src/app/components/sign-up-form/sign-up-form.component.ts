@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { FormGroup, FormControl } from '@angular/forms';
+import { FirebaseLService } from '../../services/firebase-l.service';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -8,12 +10,21 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./sign-up-form.component.css']
 })
 export class SignUpFormComponent implements OnInit {
-
+  form = new FormGroup({
+    email: new FormControl(),
+    password: new FormControl()
+  })
   constructor(
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public fc: FirebaseLService
   ) { }
 
   ngOnInit() {
+  }
+
+  signup(){
+    
+    this.fc.signUpE(this.form.get('email').value, this.form.get('password').value)
   }
 
   singUpG() {
