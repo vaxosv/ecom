@@ -18,6 +18,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { FirebaseLService } from './services/firebase-l.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     AngularFireAuthModule,
     AngularFireStorageModule
   ],
-  providers: [],
+  providers: [FirebaseLService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
