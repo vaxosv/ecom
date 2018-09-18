@@ -9,7 +9,7 @@ export class FirebaseLService {
     constructor() { }
 
     signUpE(email, password) {
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+        const data = firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
             console.log(this);
             
             // Handle Errors here.
@@ -21,6 +21,9 @@ export class FirebaseLService {
                 
             }
         });
+        
+        
+        
         
     }
 
