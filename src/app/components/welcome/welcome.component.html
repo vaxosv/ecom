@@ -3,3 +3,9 @@
   <button (click)="funing()">have fun</button>
   <h1 *ngIf="bool" class="fun">funing weeee</h1>
 </div>
+
+<ul>
+  <li *ngFor="let item of items | async">
+    {{ item.name }}
+  </li>
+</ul>

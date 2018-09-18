@@ -1,5 +1,9 @@
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from 'angularfire2/database';
 
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -7,12 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
   bool = false;
-  constructor() { }
+  courses: any[]
+  constructor(
+    private db: AngularFireDatabase
+  ) {
+    let jj = db.list('/courses')
+    jj.snapshotChanges()
+      .subscribe(result => {
+        console.log(result)
+      });
 
-  ngOnInit() {
   }
 
-  funing () {
+  ngOnInit() {
+
+  }
+
+  funing() {
     this.bool = !this.bool;
     console.log('weeeeee');
   }
