@@ -39,10 +39,10 @@ export class SignUpFormComponent implements OnInit {
   }
 
   signup() {
-     
-
     this.fc.signUpE(this.form.get('email').value, this.form.get('password').value)
   }
+
+  
 
   singUpG() {
     return new Promise<any>((resolve, reject) => {
