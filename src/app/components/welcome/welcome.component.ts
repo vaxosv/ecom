@@ -1,35 +1,36 @@
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 import { Observable } from 'rxjs';
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
-})
-export class WelcomeComponent implements OnInit {
-  bool = false;
-  courses: any[]
-  constructor(
-    private db: AngularFireDatabase
-  ) {
-    let jj = db.list('/courses')
-    jj.snapshotChanges()
-      .subscribe(result => {
-        console.log(result)
-      });
+    selector: 'app-welcome',
+    templateUrl: './welcome.component.html',
+    styleUrls: ['./welcome.component.css']
+  })
+  export class WelcomeComponent implements OnInit {
+    i:number = 0;
+    courses: any[]
+    constructor(
+        private db: AngularFireDatabase
+    ) {
+        let jj = db.list('/courses')
+        jj.snapshotChanges()
+            .subscribe(result => {
+                console.log(result)
+            });
 
-  }
+    }
 
-  ngOnInit() {
+    ngOnInit() {
+        // this.add()
+    }
 
-  }
+    add() {
+        this.db.list('/courses')
+            .push({
+                saxeli: `course ${this.i}`,
+            })
 
-  funing() {
-    this.bool = !this.bool;
-    console.log('weeeeee');
-  }
-
+        this.i ++;
+    }
 }
