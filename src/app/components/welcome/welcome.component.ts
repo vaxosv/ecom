@@ -38,4 +38,6 @@ import { Observable } from 'rxjs';
         this.db.list('/courses')
             .remove ()
     }
+
+    
 }
