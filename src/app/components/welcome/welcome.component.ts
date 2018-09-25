@@ -39,15 +39,6 @@ import { Observable } from 'rxjs';
             .remove ()
     }
 
-    rename() {
-        this.db.list('/courses')
-            .update({
-                naem: "vaxo",
-                
-            })
-    }
-
-
-    code for code
+    // TODO: user autorissation
 
 }
