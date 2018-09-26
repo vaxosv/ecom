@@ -40,5 +40,6 @@ import { Observable } from 'rxjs';
     }
 
     // TODO: user autorissation
+    // TODO: user profile image
 
 }
